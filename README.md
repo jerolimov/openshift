@@ -1,1 +1,1 @@
-# OpenShift experiments
+# OpenShift notes & experiments
