@@ -24,7 +24,7 @@ export HELM_REPOSITORY_CONFIG="/tmp/repositories.yaml"
 
 export KUBECONFIG=~/.crc/machines/crc/kubeconfig
 
-oc login -u kubeadmin -p $(cat $HOME/.crc/cache/crc_libvirt_4.4.8/kubeadmin-password)
+oc login -u kubeadmin -p $(cat ~/.crc/cache/crc_libvirt_*/kubeadmin-password)
 
 source ./contrib/oc-environment.sh
 
