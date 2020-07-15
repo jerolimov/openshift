@@ -19,6 +19,9 @@ crc start
 ## Connect local console
 
 ```bash
+# Optional: workaround to fix some helm update issues
+export HELM_REPOSITORY_CONFIG="/tmp/repositories.yaml"
+
 export KUBECONFIG=~/.crc/machines/crc/kubeconfig
 
 oc login -u kubeadmin -p $(cat $HOME/.crc/cache/crc_libvirt_4.4.8/kubeadmin-password)
