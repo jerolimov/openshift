@@ -1,7 +1,8 @@
 #!/bin/bash
 
+# Setting this here to ensure that I can call the script from any shell.
+# Remove this to use your active oc session (server/login and project/namespace)
 export KUBECONFIG=~/.crc/machines/crc/kubeconfig
-
 export NAMESPACE="christoph-test"
 
 resources=""

@@ -4,6 +4,7 @@
 
 * Requires a [Red Hat account / subscription](https://www.redhat.com/)
 * [Download page](https://cloud.redhat.com/openshift/install/crc/installer-provisioned) which contains also the Pull Secret
+* [Documentation](https://code-ready.github.io/crc/)
 
 ## Setup
 

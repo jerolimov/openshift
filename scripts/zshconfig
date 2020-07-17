@@ -1,0 +1,18 @@
+#!/usr/bin/zsh
+
+# Do not call this script directly.
+# Include this into your .zshrc:
+# source ~/git/jerolimov/openshift/scripts/zshconfig
+
+# k8s & co. auto completion
+source <(kubectl completion zsh)
+source <(oc completion zsh)
+source <(kn completion zsh)
+source <(tkn completion zsh)
+
+# local crc & openshift scripts
+for script in ~/git/jerolimov/openshift/scripts/*.sh;
+do
+    cmd=$(basename "$script" | sed 's/.sh//')
+    alias "$cmd=source $script"
+done
