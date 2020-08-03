@@ -9,6 +9,9 @@ source <(kubectl completion zsh)
 source <(oc completion zsh)
 source <(kn completion zsh)
 source <(tkn completion zsh)
+source <(helm completion zsh)
+source <(kompose completion zsh)
+source <(minikube completion zsh)
 
 # local crc & openshift scripts
 for script in ~/git/jerolimov/openshift/commands/*.sh;
