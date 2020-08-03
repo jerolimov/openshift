@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 export VERSION="4.5.1"
 
 export HELM_REPOSITORY_CONFIG="/tmp/repositories.yaml"

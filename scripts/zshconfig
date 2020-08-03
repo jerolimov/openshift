@@ -11,8 +11,14 @@ source <(kn completion zsh)
 source <(tkn completion zsh)
 
 # local crc & openshift scripts
-for script in ~/git/jerolimov/openshift/scripts/*.sh;
+for script in ~/git/jerolimov/openshift/commands/*.sh;
 do
     cmd=$(basename "$script" | sed 's/.sh//')
     alias "$cmd=source $script"
+done
+
+for script in ~/git/jerolimov/openshift/scripts/*.sh;
+do
+    cmd=$(basename "$script" | sed 's/.sh//')
+    alias "$cmd=$script"
 done
