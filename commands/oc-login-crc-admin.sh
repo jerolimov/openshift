@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export VERSION="4.5.1"
+export VERSION="4.5.4"
 
 export HELM_REPOSITORY_CONFIG="/tmp/repositories.yaml"
 export KUBECONFIG=~/.crc/machines/crc/kubeconfig
