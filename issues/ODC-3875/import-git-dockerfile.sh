@@ -68,7 +68,7 @@ cat <<EOF
             }
         },
         "source": {
-            "contextDir": "/nodeinfo",
+            "contextDir": "$CONTEXT_DIR",
             "git": {
                 "uri": "$GIT_URL",
                 "ref": "",
