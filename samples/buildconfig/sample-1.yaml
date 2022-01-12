@@ -1,0 +1,60 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: sample-1
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/openshift/ruby-ex.git'
+      ref: master
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'ruby:2.7'
+        namespace: openshift
+      env: []
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: sample-1-success
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/openshift/ruby-ex.git'
+      ref: master
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'ruby:2.7'
+        namespace: openshift
+      env: []
+  postCommit: 
+      script: "true"
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: sample-1-failure
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/openshift/ruby-ex.git'
+      ref: master
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'ruby:2.7'
+        namespace: openshift
+      env: []
+  postCommit: 
+      script: "false"
