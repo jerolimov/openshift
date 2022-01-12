@@ -9,23 +9,36 @@
 ## Setup
 
 ```bash
-# Increase node memory limit from default 9 GB to 16 GB
-crc config set memory 16384
+crc config set consent-telemetry no
+crc config set enable-cluster-monitoring false
+crc config set cpus 12
+crc config set memory 24576
+crc config set disk-size 100
+```
 
-crc
+With monitoring:
 
-crc start
+```bash
+crc config set consent-telemetry no
+crc config set enable-cluster-monitoring true
+crc config set cpus 12
+crc config set memory 24576
+crc config set disk-size 100
+```
+
+Delete and create a new setup
+
+
+```bash
+crc stop; crc delete -f; crc setup && crc start
 ```
 
 ## Connect local console
 
 ```bash
-# Optional: workaround to fix some helm update issues
-export HELM_REPOSITORY_CONFIG="/tmp/repositories.yaml"
-
 export KUBECONFIG=~/.crc/machines/crc/kubeconfig
 
-oc login -u kubeadmin -p $(cat ~/.crc/cache/crc_libvirt_*/kubeadmin-password)
+oc login -u kubeadmin -p $(cat ~/.crc/machines/crc/kubeadmin-password)
 
 source ./contrib/oc-environment.sh
 
