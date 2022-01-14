@@ -1,0 +1,6 @@
+[allowlist]
+  description = "Allow intentionally published private SSH key"
+  files = [
+    'intentionally_published_private_ssh_key',
+    'intentionally_published_public_ssh_key',
+  ]
