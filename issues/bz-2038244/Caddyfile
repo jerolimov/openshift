@@ -1,0 +1,26 @@
+{
+  debug
+  auto_https disable_redirects
+}
+
+https://bitbucket.localhost:22222 {
+  reverse_proxy {
+    to https://bitbucket.ospqa.com 
+    header_up Host bitbucket.ospqa.com
+    header_down Access-Control-Allow-Origin *
+  }
+  log {
+    output stdout
+  }
+}
+
+https://stash.localhost:22223 {
+  reverse_proxy {
+    to https://stash.kopano.io 
+    header_up Host stash.kopano.io
+    header_down Access-Control-Allow-Origin *
+  }
+  log {
+    output stdout
+  }
+}
