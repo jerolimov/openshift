@@ -4,6 +4,7 @@ set -e
 pr="$1"
 if ! [[ "$pr" =~ ^[0-9]{5}$ ]]; then
     echo "Invalid PR $pr"
+    exit 1
 fi
 
 dir="$HOME/git/openshift/console-$pr"
