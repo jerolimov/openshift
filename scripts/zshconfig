@@ -15,6 +15,6 @@ source <(minikube completion zsh)
 
 for script in ~/git/jerolimov/openshift/scripts/*.sh;
 do
-    cmd=$(basename "$script" | sed 's/.sh//')
+    cmd=$(basename "$script" | sed 's/.sh$//')
     alias "$cmd=$script"
 done
