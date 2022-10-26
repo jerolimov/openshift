@@ -2,7 +2,7 @@
 set -e
 
 pr="$1"
-if ! [[ "$pr" =~ ^[0-9]{5}$ ]]; then
+if ! [[ "$pr" =~ ^[0-9]{4,5}$ ]]; then
     echo "Invalid PR $pr"
     exit 1
 fi

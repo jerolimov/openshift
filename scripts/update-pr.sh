@@ -3,7 +3,7 @@ set -e
 
 pr="$1"
 
-if ! [[ "$pr" =~ ^[0-9]{5}$ ]]; then
+if ! [[ "$pr" =~ ^[0-9]{4,5}$ ]]; then
     echo "Invalid PR $pr"
     exit 1
 fi
@@ -12,6 +12,11 @@ path="$HOME/git/openshift/console-$pr"
 test -d "$path"
 cd "$path"
 gh pr checkout "$pr" --force
+
+echo
+echo "Build backend..."
+echo
+./build-backend.sh
 
 echo
 echo "Build frontend..."
