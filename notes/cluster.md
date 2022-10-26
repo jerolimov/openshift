@@ -35,7 +35,7 @@ You need to setup aws cli and credentials to start a shared cluster. (TODO)
     ./openshift-install create cluster --log-level debug
     ```
 
-    This will take ~ x minutes to setup a cluster.
+    This will take ~35 minutes to setup a cluster.
 
 5. Destroy your cluster if not needed anymore:
 
@@ -63,9 +63,11 @@ Step 0-3 and 5 as described above.
 
     For capabilities configuration options see:
 
-    1. https://github.com/openshift/installer/blob/master/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L312
+    1. https://docs.openshift.com/container-platform/4.11/post_installation_configuration/cluster-capabilities.html
+    2. https://github.com/openshift/installer/blob/master/docs/user/customization.md
+    3. https://github.com/openshift/installer/blob/master/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L312
 
-    Edit the yaml and add this sections:
+    Edit `install-config.yaml` and add this sections:
 
     4.11 defaults / without samples:
 
@@ -94,7 +96,7 @@ Step 0-3 and 5 as described above.
     - CSISnapshot
     ```
 
-    ⚠️ The changed `config.yaml` is removed when creating the cluster.
+    ⚠️ The changed `install-config.yaml` is removed when creating the cluster.
 
     Continue with:
 
