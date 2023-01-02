@@ -14,7 +14,7 @@ echo
 path="$HOME/git/openshift/console-$pr"
 git clone git@github.com:openshift/console.git "$path"
 cd "$path"
-gh pr checkout "$pr"
+gh pr --repo openshift/console checkout "$pr"
 
 echo
 echo "Build backend..."

@@ -11,7 +11,7 @@ fi
 path="$HOME/git/openshift/console-$pr"
 test -d "$path"
 cd "$path"
-gh pr checkout "$pr" --force
+gh pr --repo openshift/console checkout "$pr" --force
 
 echo
 echo "Build backend..."
