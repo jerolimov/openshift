@@ -5,13 +5,13 @@
 # source ~/git/jerolimov/openshift/scripts/zshconfig
 
 # k8s & co. auto completion
-source <(kubectl completion zsh)
-source <(oc completion zsh)
-source <(kn completion zsh)
-source <(tkn completion zsh)
-source <(helm completion zsh)
-source <(kompose completion zsh)
-source <(minikube completion zsh)
+command -v kubectl &>/dev/null &&   source <(kubectl completion zsh)
+command -v oc &>/dev/null &&        source <(oc completion zsh)
+command -v kn &>/dev/null &&        source <(kn completion zsh)
+command -v tkn &>/dev/null &&       source <(tkn completion zsh)
+command -v helm &>/dev/null &&      source <(helm completion zsh)
+command -v kompose &>/dev/null &&   source <(kompose completion zsh)
+command -v minikube &>/dev/null &&  source <(minikube completion zsh)
 
 for script in ~/git/jerolimov/openshift/scripts/*.sh;
 do
