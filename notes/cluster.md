@@ -69,7 +69,7 @@ Step 0-3 and 5 as described above.
 
     Edit `install-config.yaml` and add this sections:
 
-    4.11 defaults / without samples:
+    [4.11 defaults](https://github.com/openshift/installer/blob/release-4.11/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L278-L291) / without samples:
 
     ```yaml
     capabilities:
@@ -77,10 +77,10 @@ Step 0-3 and 5 as described above.
     additionalEnabledCapabilities:
     - baremetal
     - marketplace
-    #  - openshift-samples
+    # - openshift-samples
     ```
 
-    4.12 defaults / without samples:
+    [4.12 defaults]([https://github.com/openshift/installer/blob/release-4.12/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L273-L282](https://github.com/openshift/installer/blob/release-4.12/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L311-L337)) / without samples:
 
     ```yaml
     capabilities:
@@ -90,10 +90,28 @@ Step 0-3 and 5 as described above.
     - marketplace
     - Console
     - Insights
+    - Storage
+    # - openshift-samples
+    - CSISnapshot
+    ```
+
+    [4.14 defaults]([[https://github.com/openshift/installer/blob/release-4.12/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L273-L282](https://github.com/openshift/installer/blob/release-4.12/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L311-L337](https://github.com/openshift/installer/blob/release-4.14/vendor/github.com/openshift/api/config/v1/types_cluster_version.go#L389-L442))) / without samples, build and DeploymentConfig:
+
+    ```yaml
+    capabilities:
+    baselineCapabilitySet: None
+    additionalEnabledCapabilities:
+    - baremetal
+    - Console
+    - Insights
     - marketplace
     - Storage
-    #  - openshift-samples
+    # - openshift-samples
     - CSISnapshot
+    - NodeTuning
+    - MachineAPI
+    # - Build
+    # - DeploymentConfig
     ```
 
     ⚠️ The changed `install-config.yaml` is removed when creating the cluster.
